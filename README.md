@@ -12,7 +12,8 @@ Learn how to use Twilio add-ons to block spam calls.
 To run the app locally, clone this repository and `cd` into its directory:
 
 1. First clone this repository and `cd` into its directory:
-   ```
+
+   ```bash
    git clone git@github.com:TwilioDevEd/block-spam-calls-java.git
 
    cd block-spam-calls-java
@@ -25,13 +26,12 @@ To run the app locally, clone this repository and `cd` into its directory:
    ```
 
    This will run the embedded Jetty application server that uses port 8080. You can change this value
-   on the [app's main file](//github.com/TwilioDevEd/clicktocall-servlets/blob/master/src/main/java/com/twilio/clicktocall/App.java)
-
+   on the [app's main file](//github.com/TwilioDevEd/block-spam-calls-java/blob/master/src/main/java/com/twilio/blockspamcalls/App.java)
 
 1. To actually forward incoming calls, your development server will need to be publicly accessible. [We recommend using ngrok to solve this problem](https://www.twilio.com/blog/2015/09/6-awesome-reasons-to-use-ngrok-when-testing-webhooks.html).
 
     Once you have started ngrok, update your TwiML app's voice URL setting to use your ngrok hostname, so it will look something like this:
-    
+
     ```
     http://88b37ada.ngrok.io/
     ```
@@ -44,7 +44,7 @@ That's it
 
 You can run the tests locally by typing
 
-```
+```bash
 mvn test
 ```
 
