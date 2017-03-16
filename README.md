@@ -14,15 +14,14 @@ To run the app locally, clone this repository and `cd` into its directory:
 1. First clone this repository and `cd` into its directory:
 
    ```bash
-   git clone git@github.com:TwilioDevEd/block-spam-calls-java.git
-
+   git clone https://github.com/TwilioDevEd/block-spam-calls-java.git
    cd block-spam-calls-java
    ```
 
 1. Run the application using Maven.
 
    ```bash
-   $ mvn compile && mvn jetty:run
+   mvn compile && mvn jetty:run
    ```
 
    This will run the embedded Jetty application server that uses port 8080. You can change this value
@@ -35,10 +34,6 @@ To run the app locally, clone this repository and `cd` into its directory:
     ```
     http://88b37ada.ngrok.io/
     ```
-
-1. Check it out at [http://localhost:8080](http://localhost:8080)
-
-That's it
 
 ## Run the tests
 

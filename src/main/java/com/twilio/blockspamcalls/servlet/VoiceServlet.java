@@ -26,6 +26,8 @@ public class VoiceServlet extends HttpServlet {
     );
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("text/xml");
+
         VoiceResponse.Builder voiceResponseBuilder = new VoiceResponse.Builder();
         boolean blockCall = false;
         String addOnsString = request.getParameter("AddOns");
