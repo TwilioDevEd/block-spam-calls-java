@@ -21,7 +21,7 @@ To run the app locally, clone this repository and `cd` into its directory:
 1. Run the application using Maven.
 
    ```bash
-   mvn compile && mvn jetty:run
+   mvn compile jetty:run
    ```
 
    This will run the embedded Jetty application server that uses port 8080. You can change this value
@@ -29,11 +29,9 @@ To run the app locally, clone this repository and `cd` into its directory:
 
 1. To actually forward incoming calls, your development server will need to be publicly accessible. [We recommend using ngrok to solve this problem](https://www.twilio.com/blog/2015/09/6-awesome-reasons-to-use-ngrok-when-testing-webhooks.html).
 
-    Once you have started ngrok, update your TwiML app's voice URL setting to use your ngrok hostname, so it will look something like this:
-
-    ```
-    http://88b37ada.ngrok.io/
-    ```
+   ```bash
+   ngrok http 8080
+   ```
 
 ## Run the tests
 
