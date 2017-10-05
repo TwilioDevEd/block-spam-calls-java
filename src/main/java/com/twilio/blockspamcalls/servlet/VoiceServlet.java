@@ -21,7 +21,7 @@ public class VoiceServlet extends HttpServlet {
 
     private static final List<String> RESULT_PATHS = ImmutableList.of(
             "$.results.marchex_cleancall.result.result.[?(@.recommendation!='PASS')]",
-            "$.results.whitepages_pro_phone_rep.result.results..reputation.[?(@.level==4)]",
+            "$.results.whitepages_pro_phone_rep.result.[?(@.reputation_level==4)]",
             "$.results.nomorobo_spamscore.[?(@.status=='successful' && @.result.score==1)]"
     );
 
