@@ -19,10 +19,14 @@ import java.util.List;
 @WebServlet("/")
 public class VoiceServlet extends HttpServlet {
 
+    private static final String WHITEPAGES_SPAM = "4";
+    private static final String NOMOROBO_SPAM = "1";
     private static final List<String> RESULT_PATHS = ImmutableList.of(
             "$.results.marchex_cleancall.result.result.[?(@.recommendation!='PASS')]",
-            "$.results.whitepages_pro_phone_rep.result.results..reputation.[?(@.level==4)]",
-            "$.results.nomorobo_spamscore.[?(@.status=='successful' && @.result.score==1)]"
+            "$.results.whitepages_pro_phone_rep.result.[?(@.reputation_level==" +
+                    WHITEPAGES_SPAM + ")]",
+            "$.results.nomorobo_spamscore.[?(@.status=='successful' && @.result.score==" +
+                    NOMOROBO_SPAM + ")]"
     );
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
