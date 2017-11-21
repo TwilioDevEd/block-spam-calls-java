@@ -5,7 +5,11 @@ import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.Option;
 import com.jayway.jsonpath.ReadContext;
-import com.twilio.twiml.*;
+import com.twilio.twiml.TwiMLException;
+import com.twilio.twiml.VoiceResponse;
+import com.twilio.twiml.voice.Hangup;
+import com.twilio.twiml.voice.Reject;
+import com.twilio.twiml.voice.Say;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -53,7 +57,7 @@ public class VoiceServlet extends HttpServlet {
             voiceResponseBuilder.say(new Say
                     .Builder("Welcome to the jungle.")
                     .build());
-            voiceResponseBuilder.hangup(new Hangup());
+            voiceResponseBuilder.hangup(new Hangup.Builder().build());
         }
         try {
             response
