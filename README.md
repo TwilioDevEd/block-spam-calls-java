@@ -3,7 +3,8 @@
 </a>
 
 # Block Spam Calls. Powered by Twilio - Java/Servlets
-[![Build Status](https://travis-ci.org/TwilioDevEd/block-spam-calls-java.svg?branch=master)](https://travis-ci.org/TwilioDevEd/block-spam-calls-java)
+
+![](https://github.com/TwilioDevEd/block-spam-calls-java/workflows/Java/badge.svg)
 
 > We are currently in the process of updating this sample template. If you are encountering any issues with the sample, please open an issue at [github.com/twilio-labs/code-exchange/issues](https://github.com/twilio-labs/code-exchange/issues) and we'll try to help you.
 
@@ -38,6 +39,12 @@ To run the app locally, clone this repository and `cd` into its directory:
    ngrok http 8080
    ```
 
+Once you have started ngrok, update your TwiML app's voice URL setting to use your ngrok hostname, so it will look something like this:
+
+```bash
+https://<your-ngrok-subdomain>.ngrok.io/
+```
+
 ## Run the tests
 
 You can run the tests locally by typing
@@ -49,5 +56,6 @@ mvn test
 ## Meta
 
 * No warranty expressed or implied. Software is as is. Diggity.
+* The CodeExchange repository can be found [here](https://github.com/twilio-labs/code-exchange/).
 * [MIT License](http://www.opensource.org/licenses/mit-license.html)
 * Lovingly crafted by Twilio Developer Education.

@@ -5,4 +5,14 @@
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
         version="2.5">
     <display-name>Block Spam Calls</display-name>
+
+    <servlet>
+        <servlet-name>home</servlet-name>
+        <servlet-class>com.twilio.blockspamcalls.servlet.VoiceServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>home</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
 </web-app>
