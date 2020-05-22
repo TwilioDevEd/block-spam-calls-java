@@ -90,11 +90,15 @@ After the above requirements have been met:
     ngrok http 8080
     ```
 
-   Once you have started ngrok, update your TwiML app's voice URL setting to use your ngrok hostname, so it will look something like this:
+    Once you have started ngrok, update your TwiML app's voice URL setting to use your ngrok hostname, so it will look something like this:
 
     ```bash
     https://<your-ngrok-subdomain>.ngrok.io/
     ```
+
+    Finally, click on `Call` to test your application. See [Create a TwiML App](#create-a-twiml-app) to set the Voice URL.
+
+    ![](images/create-twiml-call-button.png)
 
 That's it!
 
