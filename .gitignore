@@ -6,3 +6,7 @@ clicktocall-servlets.iml
 .env
 target/
 *.iml
+.settings
+.classpath
+.project
+.vscode

@@ -117,12 +117,12 @@ public class VoiceServletTest {
     }
 
     @Test
-    public void testSuccessfulWithWhitePages() throws IOException {
+    public void testSuccessfulWithEkata() throws IOException {
         // Given
         HttpServletRequest request = mock(HttpServletRequest.class);
         HttpServletResponse response = mock(HttpServletResponse.class);
 
-        String addOns = getResource("/successful_whitepages.json");
+        String addOns = getResource("/successful_ekata.json");
         when(request.getParameter("AddOns")).thenReturn(addOns);
 
         ByteArrayServletOutputStream outputStream = new ByteArrayServletOutputStream();
@@ -136,12 +136,12 @@ public class VoiceServletTest {
     }
 
     @Test
-    public void testBlockedWithWhitePages() throws IOException {
+    public void testBlockedWithEkata() throws IOException {
         // Given
         HttpServletRequest request = mock(HttpServletRequest.class);
         HttpServletResponse response = mock(HttpServletResponse.class);
 
-        String addOns = getResource("/spam_whitepages.json");
+        String addOns = getResource("/spam_ekata.json");
         when(request.getParameter("AddOns")).thenReturn(addOns);
 
         ByteArrayServletOutputStream outputStream = new ByteArrayServletOutputStream();

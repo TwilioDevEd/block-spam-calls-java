@@ -5,7 +5,11 @@ import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.Option;
 import com.jayway.jsonpath.ReadContext;
-import com.twilio.twiml.*;
+import com.twilio.twiml.voice.Reject;
+import com.twilio.twiml.voice.Hangup;
+import com.twilio.twiml.voice.Say;
+import com.twilio.twiml.VoiceResponse;
+import com.twilio.twiml.TwiMLException;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,12 +23,12 @@ import java.util.List;
 @WebServlet("/")
 public class VoiceServlet extends HttpServlet {
 
-    private static final String WHITEPAGES_SPAM = "4";
+    private static final String EKATA_SPAM = "4";
     private static final String NOMOROBO_SPAM = "1";
     private static final List<String> RESULT_PATHS = ImmutableList.of(
             "$.results.marchex_cleancall.result.result.[?(@.recommendation!='PASS')]",
-            "$.results.whitepages_pro_phone_rep.result.[?(@.reputation_level==" +
-                    WHITEPAGES_SPAM + ")]",
+            "$.results.ekata_pro_phone_rep.result.[?(@.reputation_level==" +
+                    EKATA_SPAM + ")]",
             "$.results.nomorobo_spamscore.[?(@.status=='successful' && @.result.score==" +
                     NOMOROBO_SPAM + ")]"
     );
@@ -53,7 +57,7 @@ public class VoiceServlet extends HttpServlet {
             voiceResponseBuilder.say(new Say
                     .Builder("Welcome to the jungle.")
                     .build());
-            voiceResponseBuilder.hangup(new Hangup());
+            voiceResponseBuilder.hangup(new Hangup.Builder().build());
         }
         try {
             response
